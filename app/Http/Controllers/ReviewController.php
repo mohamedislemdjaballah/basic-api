@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\traits\ApiResponse;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -9,10 +10,9 @@ class ReviewController extends Controller
     /**
      * Display a listing of the resource.
      */
+    use ApiResponse;
     public function index()
     {
-        return response()->json([
-            'message' => 'All reviews will be returned here'
-        ], 200);
+        return $this->ok('This is a get request');
     }
 }
